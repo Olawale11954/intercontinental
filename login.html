@@ -1,0 +1,153 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>INTERCONTINENTAL SCHOOLS, KANO</title>
+  <style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+
+.login-container {
+  background-color: #fff;
+  width: 100%;
+  max-width: 300px;
+  margin: 100px auto 100px;
+  transform: translateY(-50, -50);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+input {
+  width: 90%;
+  padding: 8px;
+  border: none;
+  border-bottom: 2px solid #333;
+  margin-bottom: 16px;
+}
+
+button {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 10px;
+  font-size: 24px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+button:hover {
+  background-color: #5645a0;
+}
+.login-container h1{
+    margin: 10px 100px 40px;
+    text-transform: uppercase;
+    font-size: 30px;
+    color: #4caf50;
+    
+}
+form p{
+    font-size: 14px;
+}
+
+
+
+
+
+
+  </style>
+</head>
+<body>
+
+
+  <div class="login-container">
+    <h1>login</h1>
+    <form id="loginForm">
+      <label for="username">Username:</label>
+      <input type="tel" id="username" name="username" placeholder="(e.g. 07035360479)" required>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+
+      <button type="button" onclick="validateLogin()">Login</button>
+    </form>
+  </div>
+
+  <script>
+
+function validateLogin() {
+  var username = document.getElementById("username").value;
+  var password = document.getElementById("password").value;
+
+    
+  if (username === "07035360479" && password === "123456") {
+    alert("Login successful!");
+    window.location.href = "olawale-profile.html";
+  } 
+  else if(username === "09033219291" && password === "123456"){
+    alert("Login successful!");
+    window.location.href = "habeeb-profile.html";
+  }
+  else if(username === "08141505085" && password === "123456"){
+    alert("Login successful!");
+    window.location.href = "balarebe-profile.html";
+  }
+  else if(username === "08061161670" && password === "123456"){
+    alert("Login successful!");
+    window.location.href = "fatima-profile.html";
+  }
+  else if(username === "09034756860" && password === "123456"){
+    alert("Login successful!");
+    window.location.href = "aisha-profile.html";
+  }
+  else if(username === "08107937277" && password === "123456"){
+    alert("Login successful!");
+    window.location.href = "maryam-profile.html";
+  }
+  else if(username === "07060636825" && password === "123456"){
+    alert("Login successful!");
+    window.location.href = "ayuba-profile.html";
+  }
+  else if(username === "08141864793" && password === "123456"){
+    alert("Login successful!");
+    window.location.href = "safiya-profile.html";
+  }
+  
+  else{
+    alert("Invalid username or password. Please try again.");
+  }
+    
+  }
+
+  </script>
+
+
+<script>
+      
+  var loader = document.getElementById("loader");
+  window.addEventListener("load", function(){
+    loader.style.display = "block";
+    setTimeout(function(){
+      loader.style.display = "none";
+    }, 9000);
+  });
+  
+</script>
+ 
+
+</body>
+</html>
