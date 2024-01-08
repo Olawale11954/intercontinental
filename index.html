@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INTERCONTINENTAL SCHOOLS, KANO</title>
+
+    <style>
+        body{
+            background: #0e012c;
+            color: white;
+        }
+        .first-page{
+            width: fit-content;
+            margin: 10% auto 0;
+        }
+        .first-page h1{
+            text-align: center;
+            font-size: 30px;
+            text-transform: uppercase;
+        }
+        .first-page img{
+            width: 300px;
+        }
+        .first-page span{
+            display: inline-block;
+            padding: 2px;
+            font-size: 50px;
+            transform: translateY(70px);
+            animation: moveup 3s linear infinite;
+        }
+        @keyframes moveup{
+  0%{
+    transform: translateY(70px);
+  }
+  20%{
+    transform: translateY(0px);
+  }
+  100%{
+    transform: translateY(0px);
+  }
+ 
+}
+
+.first-page span:nth-child(2){
+    animation-delay: 0.2s;
+}
+.first-page span:nth-child(3){
+    animation-delay: 0.4s;
+}
+.first-page span:nth-child(4){
+    animation-delay: 0.6s;
+}
+.first-page span:nth-child(5){
+    animation-delay: 0.8s;
+}
+.first-page span:nth-child(6){
+    animation-delay: 1s;
+}
+.first-page span:nth-child(7){
+    animation-delay: 1.2s;
+}
+.first-page span:nth-child(8){
+    animation-delay: 1.4s;
+}
+.first-page span:nth-child(9){
+    animation-delay: 1.6s;
+}
+.first-page span:nth-child(10){
+    animation-delay: 1.8s;
+}
+.first-page span:nth-child(11){
+    animation-delay: 2s;
+}
+.first-page span:nth-child(12){
+    animation-delay: 2.2s;
+}
+.first-page span:nth-child(13){
+    animation-delay: 0.2s;
+}
+.first-page span:nth-child(14){
+    animation-delay: 2.4s;
+}
+.first-page span:nth-child(15){
+    animation-delay: 2.6s;
+}
+.first-page span:nth-child(16){
+    animation-delay: 2.8s;
+}
+
+.first-page a{
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    font-size: 24px;
+    background: #fff;
+    color: red;
+    padding: 10px 10px;
+    width: 70px;
+    border-radius: 10px;
+    margin: 100px auto 50px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+.first-page a:hover{
+    background: rgb(200, 0, 0);
+    color: #fff;
+}
+@media(max-width: 700px){
+    .first-page span{
+        font-size: 20px;
+      padding: 1px;
+    }
+    .first-page{
+            margin: 45% auto 0;
+        }
+}
+
+    </style>
+</head>
+<body>
+    
+    <div class="first-page">
+        <h1>Welcome</h1>
+       
+
+        <span>I</span>
+        <span>N</span>
+        <span>T</span>
+        <span>E</span>
+        <span>R</span>
+        <span>C</span>
+        <span>O</span>
+        <span>N</span>
+        <span>T</span>
+        <span>I</span>
+        <span>N</span>
+        <span>E</span>
+        <span>N</span>
+        <span>T</span>
+        <span>E</span>
+        <span>R</span>
+        <a href="signup.php">Signup</a>
+    </div>
+   
+</body>
+</html>

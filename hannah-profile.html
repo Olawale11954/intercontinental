@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INTERCONTINENTAL SCHOOLS, KANO</title>
+    <link rel="stylesheet" href="profile.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?
+family=Poppins:wght@100;200;300;400;600;700&display=swap"
+rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://kit.fontawesome.com/307172a5f5.js" crossorigin="anonymous"></script>
+<script src="script.js" defer></script>
+</head>
+<body>
+    <div id="preloader">
+
+    </div>
+    <section class="header">
+
+      <div class="container">
+        <div id="image-container"></div>
+       <img id="profile-picture" src="#">
+       <h2>Hannah Patrick</h2>
+       <a href="hannah-profile-edit.html" class="profile-editor">Edit Profile</a>
+       <label class="update-picture" for="file-input">Upload Picture</label>
+       <input type="file" id="file-input" accept="image/*" onchange="previewImage(event)">
+     </div>
+        <nav>
+           <div class="nav-links" id="navLinks">
+              <i class="fa fa-times" onclick="hideMenu()"></i>
+              <ul>
+                <li><a href="hannah-profile.html">DASHBOARD</a></li>
+                <li><a href="hannah.html">Progress Report</a></li>
+                <li><a href="#">Download Week 1 Report</a><i class="fa-solid fa-download"></i></li>
+                <li><a href="weather.html">Weather App <i class="fa-solid fa-cloud"></i></a></li>
+                <li><a href="qrcode.html">Generate QRCODE <i class="fa-solid fa-qrcode"></i></a></li>
+                <li><a href="search.html">Images Serach Engine <i class="fa-solid fa-image"></i></a></li>
+                <li><a href="contact.html">Contact Us<i class="fa-solid fa-address-book"></i></a></li>
+                <li><a href="login.php"><i class="fa-solid fa-power-off"></i></a></li>
+              </ul>
+           </div>
+           <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+
+        <div id="notification-box"><i class="fa-solid fa-bell" onclick="toggleMenu()"></i></div>
+       
+        <div class="notification-text">3</div>
+        <div class="notification-box" id="show-notification">
+          <h2>Notifications</h2>
+          <p>You've been assigned to teach Computer in Primary Section</p>
+          <p>You've been assigned to teach Computer in Hi-Tech Academy</p>
+        
+         
+          
+        </div>
+       
+</body>
+<script>
+    
+    
+
+    var navLinks = document.getElementById("navLinks");
+          function showMenu(){
+             navLinks.style.right = "0";
+          }
+          function hideMenu(){
+             navLinks.style.right = "-300px";
+          }
+
+         function previewImage(event) {
+            const fileInput = event.target;
+            const imageContainer = document.getElementById('image-container');
+            const profilePicture = document.getElementById('profile-picture');
+
+            const file = fileInput.files[0];
+
+            if (file) {
+                const reader = new FileReader();
+
+                reader.onload = function (e) {
+                    profilePicture.src = e.target.result;
+
+                    localStorage.setItem('profilePicture', e.target.result);
+                };
+
+                reader.readAsDataURL(file);
+            }
+        }
+
+        const savedProfilePicture = localStorage.getItem('profilePicture');
+        if (savedProfilePicture) {
+            const profilePicture = document.getElementById('profile-picture');
+            profilePicture.src = savedProfilePicture;
+        }
+
+        let showNotificatio = document.getElementById("show-notification");
+
+        function toggleMenu() {
+          showNotificatio.classList.toggle("open-notification");
+        }
+
+
+     </script>
+
+<script>
+      
+    var loader = document.getElementById("preloader");
+    window.addEventListener("load", function(){
+      loader.style.display = "block";
+      setTimeout(function(){
+        loader.style.display = "none";
+      }, 3000);
+    });
+    
+  </script>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INTERCONTINENTAL SCHOOLS, KANO</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?
+family=Poppins:wght@100;200;300;400;600;700&display=swap"
+rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://kit.fontawesome.com/307172a5f5.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+   
+  <div id="preloader">
+
+  </div>
+    <section class="header">
+        <nav>
+           <div class="nav-links" id="navLinks">
+              <i class="fa fa-times" onclick="hideMenu()"></i>
+              <ul>
+               <li><a href="olawale-profile.html">DASHBOARD</a></li>
+            <li><a href="olawale.html">Progress Report</a></li>
+            <li><a href="#">Download Week 1 Report</a><i class="fa-solid fa-download"></i></li>
+            <li><a href="weather.html">Weather App <i class="fa-solid fa-cloud"></i></a></li>
+                <li><a href="qrcode.html">Generate QRCODE <i class="fa-solid fa-qrcode"></i></a></li>
+                <li><a href="search.html">Images Serach Engine <i class="fa-solid fa-image"></i></a></li>
+                <li><a href="contact.html">Contact Us<i class="fa-solid fa-address-book"></i></a></li>
+                <li><a href="login.php"><i class="fa-solid fa-power-off"></i></a></li>
+              </ul>
+           </div>
+           <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+        
+        
+
+
+
+            <div class="contact-col">
+         
+                <form name="submit-to-google-sheet">
+          
+                   <div class="input-group">
+                      <label>Full Name</label>
+                      <input type="text" name="Name" placeholder="Student name" required>
+                      
+                   </div>
+          
+                   <div class="input-group"> 
+                      <label>Topic</label>
+                      <input type="text" name="Topic" placeholder="Enter Topic" required>
+                      
+                   </div>
+
+                   <div class="input-group">
+                     <label>Class</label>
+                     <select class="select-btn" name="Class">
+                       <option value="">Select Class</option>
+                       <option value="Lower KG CON">Lower KG CON</option>
+                       <option value="Lower KG DN">Lower KG DN</option>
+                       <option value="Upper KG CON">Upper KG CON</option>
+                       <option value="Upper KG DN">Upper KG DN</option>
+                       <option value="primary One CON">Primary One CON</option>
+                       <option value="primary One DN">Primary One DN</option>
+                       <option value="primary Two CON">Primary Two CON</option>
+                       <option value="primary Two DN">Primary Two DN</option>
+                       <option value="primary Three CON">Primary Three CON</option>
+                       <option value="primary Three DN">Primary Three DN</option>
+                       <option value="primary Four CON">Primary Four CON</option>
+                       <option value="primary Four DN">Primary Four DN</option>
+                       <option value="primary Five CON">Primary Five CON</option>
+                       <option value="primary Five DN">Primary Five DN</option>
+                       
+                       
+                     </select>
+                     
+                  </div>
+                    <div class="input-group"> 
+                      <label>Date</label>
+                      <input type="date" name="Date" id="date">
+                      
+                   </div>
+          
+                   <div class="input-group">
+                      <label>Time</label>
+                      <select class="select-btn" name="Time">
+                        <option value="">Select time range</option>
+                        <option value="8:00 - 9:00">8:00 - 9:00</option>
+                        <option value="9:00 - 10:00">9:00 - 10:00</option>
+                        <option value="10:00 - 11:00">10:00 - 11:00</option>
+                        <option value="11:00 - 12:00">11:00 - 12:00</option>
+                        <option value="12:00 - 1:00">12:00 - 1:00</option>
+                        <option value="1:00 - 2:00">1:00 - 2:00</option>
+                        <option value="2:00 - 3:00">2:00 - 3:00</option>
+                        <option value="3:00 - 4:00">3:00 - 4:00</option>
+                        <option value="4:00 - 5:00">4:00 - 5:00</option>
+                        
+                      </select>
+                      
+                   </div>
+              
+          
+                   <div class="input-group">
+                      <label>Select Day</label>
+                      <select class="select-btn" name="Day" class="state-options">
+                       <option value="">Select Day</option>
+                       <option value="Monday">Monday</option>
+                       <option value="Tuesday">Tuesday</option>
+                       <option value="Wednesday">Wednesday</option>
+                       <option value="Thursday">Thursday</option>
+                       <option value="Friday">Friday</option>
+                       <option value="Saturday">Saturday</option>
+                       
+                    </select><br>
+                   </div>
+                   <div class="input-group">
+                    <label>Task Accomplished</label>
+                    <textarea rows="5" name="Task"></textarea>
+                   
+                 </div>
+          
+                 <div id="myButton">
+                  <button type="submit" id="submitButton">Submit</button>
+                  <div class="spinner" id="spinner"></div>
+               </div>
+
+              
+                </form>
+
+             </div>
+        </section>
+             
+        <div class="success-msg" id="msg">
+         <i class="fa-solid fa-check"></i>
+         <span>Progress Report <br> Saved Successfully, Thank you.</span>
+        
+      </div>
+      
+        
+
+<script>
+
+
+const scriptURL = 'https://script.google.com/macros/s/AKfycbz_xM9g-0jBm2sHomLBCYrbRjt_H6xcdhdNa5YGHOqYmWwvxXNW-Ikw_TIyaoIO3l62/exec'
+const form = document.forms['submit-to-google-sheet']
+const msg = document.getElementById("msg")
+const submitBtn = document.getElementById("submitButton")
+
+form.addEventListener('submit', e => {
+  e.preventDefault()
+  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+    .then(response => {
+       msg.style.display = "block"
+       setTimeout(function(){
+          msg.style.display = "none"
+       },3000)    
+       form.reset()
+    })
+
+    .catch(error => console.error('Error!', error.message))
+})
+    
+    var navLinks = document.getElementById("navLinks");
+          function showMenu(){
+             navLinks.style.right = "0";
+          }
+          function hideMenu(){
+             navLinks.style.right = "-300px";
+          }
+
+          let userProfile = document.getElementById("userProfile");
+
+function toggleMenu(){
+   userProfile.classList.toggle("open-menu");
+}
+
+          
+          function previewImage(event) {
+            const fileInput = event.target;
+            const imageContainer = document.getElementById('image-container');
+            const profilePicture = document.getElementById('profile-picture');
+
+            const file = fileInput.files[0];
+
+            if (file) {
+                const reader = new FileReader();
+
+                reader.onload = function (e) {
+                    profilePicture.src = e.target.result;
+
+                    // Save the image to local storage
+                    localStorage.setItem('profilePicture', e.target.result);
+                };
+
+                reader.readAsDataURL(file);
+            }
+        }
+
+        // Check if there is a saved profile picture in local storage
+        const savedProfilePicture = localStorage.getItem('profilePicture');
+        if (savedProfilePicture) {
+            const profilePicture = document.getElementById('profile-picture');
+            profilePicture.src = savedProfilePicture;
+        }
+
+        
+     </script>
+     <script>
+      
+      var loader = document.getElementById("preloader");
+      window.addEventListener("load", function(){
+        loader.style.display = "block";
+        setTimeout(function(){
+          loader.style.display = "none";
+        }, 3000);
+      });
+      
+    </script>
+    </body>
+</html>

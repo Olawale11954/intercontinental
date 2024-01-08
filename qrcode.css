@@ -1,0 +1,117 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background: aqua;
+}
+
+nav ul li{
+    list-style: none;
+}
+
+nav ul li a{
+    text-decoration: none;
+    font-size: 24px;
+    background-color: #fa67fa;
+    display: flex;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    border-radius: 50px;
+    color: #fff;
+    cursor: pointer;
+}
+.container{
+    width: 100%;
+    max-width: 500px;
+    padding: 25px 35px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    border-radius: 10px;
+    
+
+}
+.container p{
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+}
+.container input{
+    width: 100%;
+    margin: 20px 20px;
+    padding: 10px 10px;
+    border: 1px solid #222;
+    border-radius: 5px;
+}
+.container button{
+    border: 0;
+    outline: 0;
+    width: 100%;
+    background: rgba(19, 1, 31, 0.867);
+    color: #fff;
+    font-size: 16px;
+    border-radius: 10px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px 10px;
+    text-align: center ;
+    margin: 10px 10px;
+    cursor: pointer;
+}
+#imgBox{
+    width: 200px;
+    border-radius: 5px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.1s;
+}
+#imgBox img{
+    width: 100%;
+    padding: 10px;
+}
+#imgBox.show-img{
+    max-height: 300px;
+    margin: 10px auto;
+    border: 1px solid #d1d1d1;
+}
+
+.error{
+    animation: shake 0.1s linear 10;
+}
+@keyframes shake{
+    0%{
+        transform: translateX(0);
+    }
+    25%{
+        transform: translateX(-2px);
+    }
+    50%{
+        transform: translateX(0);
+    }
+    75%{
+        transform: translateX(2px);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+#preloader{
+    background: #0e012c url(images/loading-green-loading.gif) no-repeat center center;
+    background-size: 15%;
+    height: 100vh;
+    width: 100%;
+    margin-top: -30px;
+    position: fixed;
+    z-index: 100;
+  }
+
+  .fa-address-book{
+    margin-left: 15px;
+    font-size: 18px;
+  }

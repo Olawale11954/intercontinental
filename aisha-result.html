@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INTERCONTINENTAL SCHOOLS, KANO</title>
+    <link rel="stylesheet" href="result.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?
+family=Poppins:wght@100;200;300;400;600;700&display=swap"
+rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://kit.fontawesome.com/307172a5f5.js" crossorigin="anonymous"></script>
+<script src="script.js" defer></script>
+</head>
+<body>
+   
+  <div id="preloader">
+
+  </div>
+    <section class="header">
+        <nav>
+
+           <div class="nav-links" id="navLinks">
+              <i class="fa fa-times" onclick="hideMenu()"></i>
+              <ul>
+               <li><a href="aisha-profile.html">DASHBOARD</a></li>
+            <li><a href="aisha.html">Progress Report</a></li>
+            <li><a href="#">Download Week 1 Report</a><i class="fa-solid fa-download"></i></li>
+            <li><a href="#">Download Result</a><i class="fa-solid fa-download"></i></li>
+            <li><a href="weather.html">Weather App <i class="fa-solid fa-cloud"></i></a></li>
+            <li><a href="qrcode.html">Generate QRCODE <i class="fa-solid fa-qrcode"></i></a></li>
+            <li><a href="search.html">Images Serach Engine <i class="fa-solid fa-image"></i></a></li>
+            <li><a href="contact.html">Contact Us<i class="fa-solid fa-address-book"></i></a></li>
+            <li><a href="login.php"><i class="fa-solid fa-power-off"></i></a></li>
+               </ul>
+           </div>
+           <i class="fa fa-bars" onclick="showMenu()"></i>
+
+
+           <div class="result-col">
+               
+         
+            <form name="submit-to-google-sheet">
+      
+               <div class="input-group">
+                  <label>Full Name</label>
+                  <input type="text" name="Name" placeholder="Student name" required>
+                  
+               </div>
+               <div class="input-group">
+                  <label>Class</label>
+                  <select class="select-btn" name="Class">
+                    <option value="">Select Class</option>
+                    <option value="Lower KG CON">Lower KG CON</option>
+                    <option value="Lower KG DN">Lower KG DN</option>
+                    <option value="Upper KG CON">Upper KG CON</option>
+                    <option value="Upper KG DN">Upper KG DN</option>
+                    <option value="primary One CON">Primary One CON</option>
+                    <option value="primary One DN">Primary One DN</option>
+                    <option value="primary Two CON">Primary Two CON</option>
+                    <option value="primary Two DN">Primary Two DN</option>
+                    <option value="primary Three CON">Primary Three CON</option>
+                    <option value="primary Three DN">Primary Three DN</option>
+                    <option value="primary Four CON">Primary Four CON</option>
+                    <option value="primary Four DN">Primary Four DN</option>
+                    <option value="primary Five CON">Primary Five CON</option>
+                    <option value="primary Five DN">Primary Five DN</option>
+                    
+                    
+                  </select>
+                </div>
+      
+               <div class="input-group">
+                  <label>CA (30)</label>
+                  <input type="number" id="ca" oninput="calculateTotal()" name="CA" required max="30">
+                  
+               </div>
+               
+               
+      
+               <div class="input-group">
+                  <label>Project (10)</label>
+                  <input type="number" id="project" oninput="calculateTotal()" name="Project" required max="10">
+                  
+               </div>
+      
+               <div class="input-group">
+                  <label>Exam (60)</label>
+                  <input type="number" id="exam" oninput="calculateTotal()" name="Exam" required max="60">
+
+               </div>
+               <div class="input-group">
+                  <label>Total (100)</label>
+                <input type="text" id="totalMarks" name="Total" readonly>
+
+               </div>
+           
+              <button type="submit" id="submitButton">Submit</button>
+            </form>
+
+         </div>
+    </section>
+        </nav>
+        
+        <div class="success-msg" id="msg">
+         <i class="fa-solid fa-check"></i>
+         <span>Progress Report <br> Saved Successfully, Thank you.</span>
+        
+      </div>
+           
+
+       
+
+<script>
+    
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxdYsxWoyf6sTeShiDdTup7PzKTP_ebI43k-j7-IrDwdcBUmOGK6CB5hL5uJVaoZJzDuw/exec'
+const form = document.forms['submit-to-google-sheet']
+const msg = document.getElementById("msg")
+
+form.addEventListener('submit', e => {
+  e.preventDefault()
+  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+    .then(response => {
+       msg.style.display = "block"
+       setTimeout(function(){
+          msg.style.display = "none"
+       },3000)
+       form.reset()
+    })
+    .catch(error => console.error('Error!', error.message))
+})
+
+    var navLinks = document.getElementById("navLinks");
+          function showMenu(){
+             navLinks.style.right = "0";
+          }
+          function hideMenu(){
+             navLinks.style.right = "-300px";
+          }
+
+         
+        let userInput = document.getElementById("date");
+         userInput.max = new Date().toISOString().split("T")[0];
+
+
+
+         function calculateTotal() {
+        var caMarks = parseFloat(document.getElementById('ca').value) || 0;
+        var projectMarks = parseFloat(document.getElementById('project').value) || 0;
+        var examMarks = parseFloat(document.getElementById('exam').value) || 0;
+
+        // Assuming total marks for all categories is 300
+        var totalMarks = caMarks + projectMarks + examMarks;
+
+        document.getElementById('totalMarks').value = totalMarks.toFixed(2) + '%';
+    } 
+     </script>
+     <script>
+      
+      var loader = document.getElementById("preloader");
+      window.addEventListener("load", function(){
+        loader.style.display = "block";
+        setTimeout(function(){
+          loader.style.display = "none";
+        }, 3000);
+      });
+      
+    </script>
+    
+      
+    </body>
+</html>
